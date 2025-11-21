@@ -78,7 +78,7 @@ fx_series.name = "fx_rate"
 # -----------------------------
 # 3) Chargement des données vins
 # -----------------------------
-df = pd.read_csv("sub_df_haut_brion.csv", sep=",", quotechar='"')
+df = pd.read_csv("sub_df_haut_brion.parquet")
 df["date"] = pd.to_datetime(df["date"], format="%Y%m%d")
 df["millesime"] = pd.to_numeric(df["millesime"]).astype(int)
 df = df[df["millesime"]>= 2010]
